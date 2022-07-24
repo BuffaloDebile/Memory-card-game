@@ -133,6 +133,7 @@ h1 span {
   will-change: transform;
   transition: transform 0.6s ease-out;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
 }
 
 .face,
@@ -170,5 +171,5 @@ h1,
 }
 
 .active {
-  transform: rotateY(45deg);
+  transform: rotateY(180deg);
 }
