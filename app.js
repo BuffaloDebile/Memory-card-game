@@ -64,3 +64,24 @@ function saveNumberOfTries() {
   }
   score.textContent = `Number of tries: ${numberOfTries}`;
 }
+
+window.addEventListener('keydown', handleRestart);
+
+let shuffleLock = false;
+
+function handleRestart(e) {
+  e.preventDefault();
+  if (e.keyCode === 32) {
+    innerCards.forEach((cards) => cards.classList.remove('active'));
+    advice.textContent = 'Try to find matching cards';
+    score.textContent = `Number of tries: 0`;
+    cards.forEach((card) => card.addEventListener('click', flipACard));
+
+    setTimeout(() => {
+      if (shuffleLock) return;
+      shuffleLock = true;
+      shuffleCards();
+      shuffleLock = false;
+    }, 600);
+  }
+}
