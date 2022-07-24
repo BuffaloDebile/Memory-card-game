@@ -75,6 +75,7 @@ function handleRestart(e) {
     innerCards.forEach((cards) => cards.classList.remove('active'));
     advice.textContent = 'Try to find matching cards';
     score.textContent = `Number of tries: 0`;
+    numberOfTries = 0;
     cards.forEach((card) => card.addEventListener('click', flipACard));
 
     setTimeout(() => {
